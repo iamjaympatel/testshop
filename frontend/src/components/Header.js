@@ -39,10 +39,10 @@ const handleopen=()=>{
             <Navbar.Brand>test shop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Brand>it is test website</Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav'style={{"backgroundColor":"black"}} />
-          <Navbar.Collapse id='basic-navbar-nav'>
+          <Navbar.Toggle aria-controls='basic-navbar-nav'style={{"backgroundColor":"white"}} >sign in</Navbar.Toggle>
+          <Navbar.Collapse id='basic-navbar-nav' >
             <Route render={({ history }) => <SearchBox history={history} />} />
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto' >
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i> Cart
