@@ -65,7 +65,7 @@ const selectedbrand=filter.brands
     dispatch({type:"SORTED",payload:event.target.value})
 };
 
-const [value, setValue] = React.useState([50]);
+const [value, setValue] = React.useState([1550]);
 const handleChangeslider =(event, newValue) => {
   setValue(newValue);
   dispatch({type:"PRICERANGE",payload:newValue})
