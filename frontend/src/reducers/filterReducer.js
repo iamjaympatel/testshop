@@ -9,7 +9,7 @@
     brands:[],
     categories: [],
    products:[],
-    price:50,
+    price:1550,
    sort:'',
    modalopen:true
   };
