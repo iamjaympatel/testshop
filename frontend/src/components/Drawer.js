@@ -109,7 +109,7 @@ const  handleChange3=(event)=>{
       price range
     </Typography>
     <Slider
-    defaultValue={16} value={value}
+    defaultValue={16} value={value} min={0} max={1600}
       onChange={handleChangeslider} valueLabelDisplay="auto" aria-labelledby="range-slider"
     />
       </ListGroup.Item>
