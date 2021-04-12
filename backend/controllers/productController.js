@@ -31,8 +31,8 @@ const getProducts = asyncHandler(async (req, res) => {
    .populate('brand','_id name slug')
    .populate('user','_id name userLocation')
    .sort({ createdAt: -1 }) 
-   .limit(pageSize)
-   .skip(pageSize * (page - 1))
+ //  .limit(pageSize)
+  // .skip(pageSize * (page - 1))
    
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
