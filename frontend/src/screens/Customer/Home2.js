@@ -150,7 +150,7 @@ else if(sort ==='Heighest Rating'){
       ) : (  
         <div >
           <Row>
-            {filteredproduct.map((product) => (
+            {filteredproduct.slice((0+10*(pageNumber-1)),10*pageNumber).map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3} >
                 <Product product={product} />
               </Col>
