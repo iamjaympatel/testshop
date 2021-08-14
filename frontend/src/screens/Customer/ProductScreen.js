@@ -49,7 +49,7 @@ const ProductScreen = ({ history, match }) => {
 
   const addToCartHandler = () => {
         if(!userInfo){
-      return history.push('/')
+      return history.push('/login')
     }
     dispatch(addToCart(match.params.id,qty,product.user))
     history.push(`/cart`)
