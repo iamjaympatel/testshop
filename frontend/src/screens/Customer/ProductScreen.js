@@ -48,6 +48,9 @@ const ProductScreen = ({ history, match }) => {
   }, [dispatch, match, successProductReview])
 
   const addToCartHandler = () => {
+        if(!userInfo){
+      return history.push('/')
+    }
     dispatch(addToCart(match.params.id,qty,product.user))
     history.push(`/cart`)
   }
