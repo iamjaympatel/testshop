@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -42,10 +42,24 @@ const App = () => {
      
       <main className='py-3'>
         <Container>
-        <Route path='/brand' component={BrandScreen} />
-        <Route path='/category' component={CategoryScreen} />
-        <Route path='/categorys/:slug' component={CategoryProduct} />
-        <Route path='/brands/:slug' component={Brandproduct} />
+
+        
+            <Switch>
+          <Route path='/' component={HomeScreen} exact />
+          <Route path='/search/:keyword' component={HomeScreen} exact />
+          <Route path='/page/:pageNumber' component={HomeScreen} exact />
+          <Route
+            path='/search/:keyword/page/:pageNumber'
+            component={HomeScreen}
+            exact
+            />
+         
+          
+        <Route path='/brand' component={BrandScreen} exact/>
+        <Route path='/category' component={CategoryScreen} exact/>
+        <Route path='/category/:slug' component={CategoryProduct} />
+        <Route path='/brand/:slug' component={Brandproduct} exact />
+        
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
@@ -57,6 +71,7 @@ const App = () => {
           <Route path='/cart/:id?' component={CartScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+          
           <Route
             path='/admin/productlist'
             component={ProductListScreen}
@@ -69,27 +84,20 @@ const App = () => {
           <AdminRoute  path='/admin/brandlist/'  component={BrandListScreen}exact />
           <AdminRoute path='/admin/brand/:id/edit' component={BrandEditScreen} />
           <AdminRoute path='/admin/brand/add' component={BrandAddScreen} />
-          
+       
           <AdminRoute  path='/admin/categorylist/'  component={CategoryListScreen}exact />
           <AdminRoute path='/admin/category/:id/edit' component={CategoryEditScreen} />
           <AdminRoute path='/admin/category/add' component={CategoryAddScreen} />
-          
+             
           <Route path='/admin/orderlist' component={OrderListScreen} />
           <Route path='/seller/order/:id' component={OrderScreenSeller} />
           <Route path='/admin/order/:id' component={OrderScreenAdmin} />
-
-
-          <Route path='/search/:keyword' component={HomeScreen} exact />
-          <Route path='/page/:pageNumber' component={HomeScreen} exact />
-          <Route
-            path='/search/:keyword/page/:pageNumber'
-            component={HomeScreen}
-            exact
-          />
-          <Route path='/' component={HomeScreen} exact />
+          </Switch>
+         
         </Container>
       </main>
       <Footer />
+      
     </Router>
   )
 }

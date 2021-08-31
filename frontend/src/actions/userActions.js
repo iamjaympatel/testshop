@@ -1,5 +1,7 @@
 import axios from 'axios'
 import {
+  USER_REQUEST,
+  USER_FAIL,
   USER_DETAILS_FAIL,
   USER_DETAILS_REQUEST,
   USER_DETAILS_SUCCESS,
@@ -30,7 +32,8 @@ import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({
-      type: USER_LOGIN_REQUEST,
+      type:   USER_REQUEST,
+      
     })
 
     const config = {
@@ -53,7 +56,7 @@ export const login = (email, password) => async (dispatch) => {
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
-      type: USER_LOGIN_FAIL,
+      type: USER_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -78,7 +81,7 @@ export const logout = () => (dispatch) => {
 export const register = (name, email, password,seller,userLocation) => async (dispatch) => {
   try {
     dispatch({
-      type: USER_REGISTER_REQUEST,
+      type: USER_REQUEST,
     })
 
     const config = {
@@ -106,7 +109,7 @@ export const register = (name, email, password,seller,userLocation) => async (di
     localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
     dispatch({
-      type: USER_REGISTER_FAIL,
+      type: USER_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -118,7 +121,7 @@ export const register = (name, email, password,seller,userLocation) => async (di
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_DETAILS_REQUEST,
+      type: USER_REQUEST,
     })
 
     const {
@@ -146,7 +149,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       dispatch(logout())
     }
     dispatch({
-      type: USER_DETAILS_FAIL,
+      type: USER_FAIL,
       payload: message,
     })
   }
@@ -198,7 +201,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
 export const listUsers = () => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_LIST_REQUEST,
+      type: USER_REQUEST,
     })
 
     const {
@@ -226,7 +229,7 @@ export const listUsers = () => async (dispatch, getState) => {
       dispatch(logout())
     }
     dispatch({
-      type: USER_LIST_FAIL,
+      type: USER_FAIL,
       payload: message,
     })
   }
@@ -235,7 +238,7 @@ export const listUsers = () => async (dispatch, getState) => {
 export const deleteUser = (id) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_DELETE_REQUEST,
+      type: USER_REQUEST,
     })
 
     const {
@@ -260,7 +263,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
       dispatch(logout())
     }
     dispatch({
-      type: USER_DELETE_FAIL,
+      type: USER_FAIL,
       payload: message,
     })
   }
@@ -269,7 +272,7 @@ export const deleteUser = (id) => async (dispatch, getState) => {
 export const updateUser = (user) => async (dispatch, getState) => {
   try {
     dispatch({
-      type: USER_UPDATE_REQUEST,
+      type: USER_REQUEST,
     })
 
     const {
@@ -299,7 +302,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
       dispatch(logout())
     }
     dispatch({
-      type: USER_UPDATE_FAIL,
+      type: USER_FAIL,
       payload: message,
     })
   }

@@ -27,11 +27,9 @@ const handleopen=()=>{
   return (
     <header>
       
-      <Navbar bg='white' variant='pink' expand='lg' collapseOnSelect>
-      
+      <Navbar bg='white' variant='pink' expand='lg' collapseOnSelect>      
         <Container>
-  
-        <IconButton color="white"aria-label="open drawer" edge="start"style={{height:'2rem',width:"2rem"}} >
+        <IconButton aria-label="open drawer" edge="start"style={{height:'2rem',width:"2rem"}} >
              <MenuIcon color="white" onClick={handleopen}/>
         </IconButton>  
   

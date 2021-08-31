@@ -109,8 +109,8 @@ const  handleChange3=(event)=>{
       price range
     </Typography>
     <Slider
-    defaultValue={1501} value={value} min={0} max={1600}
-      onChange={handleChangeslider} valueLabelDisplay="auto" aria-labelledby="range-slider"
+    defaultValue={16} value={value} min={0} max={1600}
+      onChange={handleChangeslider} valueLabelDisplay="auto" aria-labelledby="range-slider" 
     />
       </ListGroup.Item>
       </ListGroup>
@@ -118,7 +118,7 @@ const  handleChange3=(event)=>{
     <FormLabel component="legend" style={{"marginTop":"0.5rem"}}>select category</FormLabel>
 
       {categories.map((c)=>
-      <div>
+      <div key={c._id}>
       <FormControlLabel
           control={<Checkbox value={c._id} 
           checked={selectedcategory.includes(c._id)}
@@ -132,7 +132,7 @@ const  handleChange3=(event)=>{
     <FormLabel component="legend" style={{"marginTop":"0.5rem"}}>select Brand</FormLabel>
 
       {brands.map((c)=>
-      <div>
+      <div key={c._id}>
       <FormControlLabel
           control={<Checkbox value={c._id} 
           checked={selectedbrand.includes(c._id)}

@@ -9,7 +9,7 @@ const Product = (props) => {
   return (
     <Card className='my-3 p-3 rounded'>
       <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant='top' style={{"height":"11rem"}}/>
+        <Card.Img src={product.image} variant='top' style={{"height":"13rem"}}/>
       </Link>
 
       <Card.Body>

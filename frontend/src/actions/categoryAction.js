@@ -154,7 +154,7 @@ export const addCategory = (Category) => {
       }
     } catch (error) {
       handleError(error, dispatch);
-      dispatch({type:REQUEST_FAIL,payload:error})
+      dispatch({type:REQUEST_FAIL,payload:error.response.data.error})
 
     }
   };
