@@ -34,7 +34,7 @@ const PlaceOrderScreen = ({ history }) => {
     Number(cart.taxPrice)
   ).toFixed(2)
 
-  const orderCreate = useSelector((state) => state.orderCreate)
+  const orderCreate = useSelector((state) => state.order)
   const { order, success, error } = orderCreate
 
   useEffect(() => {
